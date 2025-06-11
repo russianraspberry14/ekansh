@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './ipod.css'
+import './Ipod.css'
 
 const IPod = ({ onNavigate }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
