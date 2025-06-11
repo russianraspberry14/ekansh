@@ -1,0 +1,79 @@
+.journal-box {
+    position: fixed;
+    top: 10%;
+    left: 30%;
+    width: 100%;
+    max-width: 600px;
+    max-height: 80vh;
+    background: white;
+    border: 2px solid black;
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 999;
+    background-image: url('notebook.avif');
+    font-family: "Gloria Hallelujah", cursive;
+  }
+  .header{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+  .header button{
+    font-size: 30px;
+  }
+  .entry {
+    border-bottom: 1px dashed #aaa;
+    padding: 0.5rem 0;
+  }
+  
+  .timestamp {
+    font-size: 0.8rem;
+    color: gray;
+  }
+
+  .entries{
+    margin-left: 100px;
+  }
+
+.scrollable-entries {
+    flex: 1; /* Takes up remaining space */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 10px;
+    scrollbar-width: thin; /* For Firefox */
+}
+
+/* Custom scrollbar styling for webkit browsers */
+.scrollable-entries::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-entries::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.scrollable-entries::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.scrollable-entries::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+.submit-btn{
+    border-radius: 10px;
+    background-color: #F7CFD8;
+    padding: 15px;
+    margin-left: 14rem;
+}
+.submit-btn:hover{
+    background-color: #F4F8D3;
+}
+.form-group{
+    margin-left: 6rem;
+}
+.form-group textarea{
+    width: 90%;
+}

@@ -1,0 +1,83 @@
+.box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(#F7CFD8,#F4F8D3);
+    border: 3px #000;
+    border-style: dashed ;
+    padding: 1rem;
+    z-index: 1000;
+    cursor: move;
+    border-radius: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    font-family: 'Jersey 10';
+    font-size: 20px;
+  }
+  .header p{
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    pointer-events: none;
+
+    .emailLink {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: #000 solid 10px;
+    }
+  }
+  .emailLink button{
+    transition-duration: 0.5s;
+  transition-property: all;
+  background-color: #F7CFD8;
+  color: #F4F8D3;
+  margin-right: 50px;
+  font-family: 'Jersey 10';
+  box-shadow: 0.2cm 0.2cm 0.4cm 0.4cm;
+  font-size: 22px;
+  margin-top: 50px;
+  padding: 15px 30px;
+  border-radius: 20px;
+  border: #F7CFD8;
+  margin-left: 160px;
+
+  }
+  .emailLink button:hover{
+    background-color: #F4F8D3;
+  color: #F7CFD8;
+  border: #F7CFD8;
+  }
+  .close-btn {
+    background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 1;
+  }
+
+.socials{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgba(250, 235, 215, 0.1);
+}
+.socials img{
+  height: 3rem;
+  width: 3rem;
+  margin: 3rem;
+}
+.socials img:hover{
+  cursor: pointer;
+}
