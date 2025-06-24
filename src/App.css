@@ -190,6 +190,9 @@ cat{
   .myName h1{
     font-size: 4rem;
   }
+  .cat{
+    position: relative;
+  }
   .clouds{
     z-index: 5;
     position: absolute;
