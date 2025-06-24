@@ -194,5 +194,15 @@ cat{
   .myName h1{
     font-size: 4rem;
   }
+  .footer p {
+    position: absolute;
+    color: #000; 
+    font-family: 'Jersey 10'; 
+    letter-spacing: 6px;
+    font-size: 20px;
+    top: 85%;  
+    z-index: 1;
+    color: white;
+  }
   
 }
