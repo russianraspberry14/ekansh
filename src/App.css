@@ -195,5 +195,6 @@ cat{
   }
   .clouds{
     display: none !important;
+    border: 2px solid red;
   }
 }
