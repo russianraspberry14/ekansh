@@ -191,8 +191,14 @@ cat{
     font-size: 4rem;
   }
   .clouds{
-    position:absolute;
-    top:30px;
-
+    z-index: 5;
+    position: absolute;
+    top: 40%; 
+    left: 40%;
+    width: 40%;    
+    height: 40%;
+    pointer-events: none;
+    opacity: 70%;
+    filter: blur(5px);
   }
 }
