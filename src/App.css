@@ -181,10 +181,10 @@ cat{
     display: none;
   }
   .navbar{
-    margin-left: 2rem;
+    margin-left: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .myName h1{
     font-size: 4rem;
