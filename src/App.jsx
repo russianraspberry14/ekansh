@@ -57,7 +57,7 @@ function App() {
     gsap.to(scrambleRef.current, {
       duration: 1,
       scrambleText: {
-        text: "bitch's",
+        text: "Ekansh's",
         chars: "01",
         revealDelay: 0.1,
       },
@@ -113,7 +113,7 @@ function App() {
 
       <div className='footer'>
         <img src = {grass} width = '100%'className='grass'/>
-        <p>© hoesa 2025</p>
+        <p>© ekanshsahu 2025</p>
       </div>
     </div>
   )
