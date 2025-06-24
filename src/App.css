@@ -185,4 +185,7 @@ cat{
     align-items: center;
     justify-content: space-between;
   }
+  .myName h1{
+    size: 30px;
+  }
 }
