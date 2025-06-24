@@ -186,6 +186,6 @@ cat{
     justify-content: space-between;
   }
   .myName h1{
-    size: 30px;
+    font-size: 2rem;
   }
 }
