@@ -191,6 +191,8 @@ cat{
     font-size: 4rem;
   }
   .clouds{
-    position: relative;
+    position:absolute;
+    top:80%;
+    
   }
 }
