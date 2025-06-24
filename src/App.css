@@ -193,7 +193,7 @@ cat{
   .cat{
     position: relative;
   }
-  clouds{
+  .clouds{
     display: none !important;
   }
 }
