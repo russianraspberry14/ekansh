@@ -175,3 +175,9 @@ cat{
   background: #8B4513;
   border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+  .navbar img {
+    display: none;
+  }
+}
