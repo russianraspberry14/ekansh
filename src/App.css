@@ -183,7 +183,7 @@ cat{
   .navbar{
     width:100%;
     display: flex;
-    margin-left: 30%;
+    margin-left: 10%;
     align-items: center;
     justify-content: space-evenly;
   }
