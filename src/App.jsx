@@ -113,7 +113,7 @@ function App() {
 
       <div className='footer'>
         <img src = {grass} width = '100%'className='grass'/>
-        <p>© ekanshsahu 2025</p>
+        <p>© hoesa 2025</p>
       </div>
     </div>
   )
