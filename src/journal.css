@@ -80,7 +80,7 @@
 
 @media (max-width: 768px) {
   .journal-box {
-    width: 95% !important;
+    width: 55% !important;
     left: 2.5% !important;
     padding: 0.8rem !important;
     font-size: 0.9rem !important;
