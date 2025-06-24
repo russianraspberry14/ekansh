@@ -194,6 +194,6 @@ cat{
     position: relative;
   }
   .clouds{
-    display: none;
+    display: none !important;
   }
 }
