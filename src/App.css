@@ -176,6 +176,10 @@ cat{
   border-radius: 10px;
 }
 
+.clouds{
+  display: none !important;
+  border: 2px solid red;
+}
 @media (max-width: 768px) {
   .navbar img {
     display: none;
@@ -190,11 +194,5 @@ cat{
   .myName h1{
     font-size: 4rem;
   }
-  .cat{
-    position: relative;
-  }
-  .clouds{
-    display: none !important;
-    border: 2px solid red;
-  }
+  
 }
