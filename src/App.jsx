@@ -57,7 +57,7 @@ function App() {
     gsap.to(scrambleRef.current, {
       duration: 1,
       scrambleText: {
-        text: "Ekansh's",
+        text: "bitch's",
         chars: "01",
         revealDelay: 0.1,
       },
