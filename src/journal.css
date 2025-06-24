@@ -80,13 +80,14 @@
 
 @media (max-width: 768px) {
   .journal-box {
+    position: fixed;
     top: 10%;
+    left: 0%;
     width: 100%;
     max-width: 600px;
     max-height: 80vh;
     background: white;
     border: 2px solid black;
-    overflow-x: auto;
     overflow-y: auto;
     padding: 1rem;
     z-index: 999;
