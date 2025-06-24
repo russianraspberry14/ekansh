@@ -80,7 +80,6 @@
 
 @media (max-width: 768px) {
   .journal-box {
-    position: fixed;
     top: 10%;
     width: 100%;
     max-width: 600px;
