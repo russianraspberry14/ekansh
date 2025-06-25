@@ -194,6 +194,14 @@ cat{
   .myName h1{
     font-size: 4rem;
   }
+  .footer {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+  }
   .footer p {
     position: absolute;
     color: #000; 
