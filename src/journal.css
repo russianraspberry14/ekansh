@@ -86,4 +86,11 @@
     font-size: 0.9rem !important;
     border: 2px dashed #000 !important;
   }
+  .header{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 50px;
+  }
 }
