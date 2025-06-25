@@ -73,7 +73,7 @@ function DialogBox() {
             <span className="window-btn">▢</span>
             <span className="window-btn">-</span>
         </div>
-        <div><span className="title">System Message</span></div>
+        <div><span className="title"> Message!</span></div>
       </div>
 
       <div className="profile-row">

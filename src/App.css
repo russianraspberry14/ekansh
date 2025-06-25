@@ -181,6 +181,18 @@ cat{
   border: 2px solid red;
 }
 @media (max-width: 768px) {
+  html {
+    background-color: #F4F8D3;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  body, #root {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F4F8D3;
+    overflow-x: hidden;
+  }
   .navbar img {
     display: none;
   }

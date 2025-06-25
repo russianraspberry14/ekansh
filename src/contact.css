@@ -95,4 +95,26 @@
     border-radius: 10px;
     width: 95%;
   }
+  .emailLink button{
+    transition-duration: 0.5s;
+    transition-property: all;
+    background-color: #F7CFD8;
+    color: #F4F8D3;
+    margin-right: 50px;
+    font-family: 'Jersey 10';
+    box-shadow: 0.2cm 0.2cm 0.4cm 0.4cm;
+    font-size: 22px;
+    margin-top: 50px;
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: #F7CFD8;
+    margin-left: 35%;
+  }
+  .socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(250, 235, 215, 0.1);
+    margin-right: 40px;
+  }
 }
