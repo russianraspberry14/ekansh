@@ -81,3 +81,18 @@
 .socials img:hover{
   cursor: pointer;
 }
+@media (max-width: 768px){
+  .box {
+    position: fixed;
+    top: 20%;
+    left: 1%;
+    background: linear-gradient(#F7CFD8,#F4F8D3);
+    border: 3px #000;
+    border-style: dashed ;
+    padding: 1rem;
+    z-index: 1000;
+    cursor: move;
+    border-radius: 10px;
+    width: 92%;
+  }
+}
