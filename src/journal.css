@@ -81,7 +81,7 @@
 @media (max-width: 768px) {
   .journal-box {
     width: 90% !important;
-    left: 2.5% !important;
+    left: 3.5% !important;
     padding: 0.2rem !important;
     font-size: 0.9rem !important;
     border: 2px dashed #000 !important;
@@ -96,4 +96,7 @@
   .entries{
     margin-left: 10px;
   }
+  .form-group{
+    margin-left: 3rem;
+}
 }
