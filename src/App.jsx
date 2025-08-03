@@ -73,7 +73,7 @@ function App() {
       <nav className='navbar'>
         <img src = {sun} alt = "An image of the sun"/>
         <div>
-        <button onClick={() => window.open('/Resume.pdf', '_blank')}>résumé</button>
+        <button onClick={() => window.open('/NTR.pdf', '_blank')}>résumé</button>
         <button onClick={() => setShowContact(true)}>contact me</button>
         </div>
       </nav>
