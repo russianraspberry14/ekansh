@@ -7,6 +7,17 @@ const Projects = () => {
   const projects = [
     {
       id: 0,
+      title: "TrotMate",
+      subtitle: "A road trip builder utilizing Google Maps API, Directions API and Google Places API.",
+      type: "Web Application",
+      tech: ["Vite-React", "Tailwind CSS", "Figma", "JSX", "Google Maps JavaScript API", "Places API", "Directions API"],
+      description: "TrotMate allows users to: • Enter a start and end location, plus a max daily drive time. • Automatically split the trip into manageable daily segments. • Suggest hotels and restaurants near each stop using the Google Places API. • Display everything on a dynamic map: from route segments to custom markers. • Let users select hotels for each night and finalize the trip plan visually. • Export to Google Maps: Generate a sharable trip link or .kml file.",
+      status: "COMPLETED",
+      image: "🗺️",
+      link: "https://github.com/russianraspberry14/trotter" 
+    },
+    {
+      id: 2,
       title: "Digital Home",
       subtitle: "Retro Portfolio Website",
       type: "Web Application",
@@ -28,7 +39,7 @@ const Projects = () => {
       link: "/bird.pdf" 
     },
     {
-      id: 2,
+      id: 3,
       title: "Brewery Finder",
       subtitle: "API USAGE",
       type: "Web Dev",
@@ -39,7 +50,7 @@ const Projects = () => {
       link: "https://github.com/russianraspberry14/brewery-finder/tree/main"
     },
     {
-      id: 3,
+      id: 4,
       title: "Handwritten Digit Recognition",
       subtitle: "Image Recognition",
       type: "Machine Learning",
