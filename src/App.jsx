@@ -17,7 +17,6 @@ import grass from './assets/grass.svg'
 import Journal from './journal.jsx'
 import Ipod from './Ipod.jsx'
 import Projects from './Projects.jsx'
-import { Analytics } from "@vercel/analytics/next"
 
 gsap.registerPlugin(ScrambleTextPlugin)
 gsap.registerPlugin(MorphSVGPlugin)
