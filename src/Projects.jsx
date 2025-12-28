@@ -48,17 +48,6 @@ const Projects = () => {
       status: "COMPLETED",
       image: "🍺",
       link: "https://github.com/russianraspberry14/brewery-finder/tree/main"
-    },
-    {
-      id: 3,
-      title: "Handwritten Digit Recognition",
-      subtitle: "Image Recognition",
-      type: "Machine Learning",
-      tech: ["Python (TensorFlow, PyTorch, Scikit-Learn, OpenCV, Keras)"],
-      description: "Upload Images of handwritten digits to convert them to text using a trained model that outputs probabilities of likely characters.",
-      status: "Beta",
-      image: "🤖",
-      link: "https://your-digit-recognition-link.com" 
     }
   ];
 
