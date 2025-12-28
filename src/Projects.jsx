@@ -25,7 +25,7 @@ const Projects = () => {
       description: "A thoughtfully designed digital space that reflects my academic and technical journey as a Computer Science undergraduate. Featuring a retro-inspired interface with modern web technologies, the site demonstrates Ekansh's expertise in front-end development, animation with GSAP, and full-stack integration using tools like React and Supabase. Explore interactive components, such as draggable modals, animated elements, and a dynamic digital journal that fetches real-time entries from a cloud database.",
       status: "COMPLETED",
       image: "🌐",
-      link: "https://your-digital-home-link.com" 
+      link: " https://github.com/russianraspberry14/ekansh" 
     },
     {
       id: 1,
@@ -39,7 +39,7 @@ const Projects = () => {
       link: "/bird.pdf" 
     },
     {
-      id: 3,
+      id: 4,
       title: "Brewery Finder",
       subtitle: "API USAGE",
       type: "Web Dev",
@@ -50,7 +50,7 @@ const Projects = () => {
       link: "https://github.com/russianraspberry14/brewery-finder/tree/main"
     },
     {
-      id: 4,
+      id: 3,
       title: "Handwritten Digit Recognition",
       subtitle: "Image Recognition",
       type: "Machine Learning",
