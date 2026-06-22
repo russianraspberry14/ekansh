@@ -19,13 +19,16 @@
     font-size: 30px;
     margin-left: 100px;
     margin-top: 50px;
+    color: black;
   }
   .header button{
     font-size: 30px;
+    color: black;
   }
   .entry {
     border-bottom: 1px dashed #aaa;
     padding: 0.5rem 0;
+    color: black;
   }
   
   .timestamp {
@@ -67,12 +70,14 @@
     background-color: #F7CFD8;
     padding: 15px;
     margin-left: 14rem;
+    color: black;
 }
 .submit-btn:hover{
     background-color: #F4F8D3;
 }
 .form-group{
     margin-left: 6rem;
+    color: black;
 }
 .form-group textarea{
     width: 90%;
@@ -80,23 +85,44 @@
 
 @media (max-width: 768px) {
   .journal-box {
-    width: 90% !important;
-    left: 3.5% !important;
-    padding: 0.2rem !important;
-    font-size: 0.9rem !important;
+    width: 92% !important;
+    left: 4% !important;
+    padding: 0.5rem !important;
+    font-size: 0.85rem !important;
     border: 2px dashed #000 !important;
+    top: 5% !important;
+    max-height: 88vh;
   }
-  .header{
+
+  .header {
     display: flex;
     flex-direction: row-reverse;
-    font-size: 30px;
-    margin-left: 20px;
-    margin-top: 50px;
-  }
-  .entries{
+    font-size: 20px;
     margin-left: 10px;
+    margin-top: 20px;
   }
-  .form-group{
-    margin-left: 3rem;
-}
+
+  .header button {
+    font-size: 20px;
+  }
+
+  .entries {
+    margin-left: 8px;
+  }
+
+  .form-group {
+    margin-left: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 95%;
+    box-sizing: border-box;
+  }
+
+  .submit-btn {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }

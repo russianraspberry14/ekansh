@@ -8,75 +8,78 @@ const IPod = ({ onNavigate }) => {
 
   const experiences = [
     {
-      title: "Research Assistantship",
-      company: "Digital Humanities, University of Maryland",
-      duration: "Aug 2025 - Dec 2025",
-      description: "Directly contributed to a project’s codebase under the supervision of Dr Raff Viglianti. Also contributed to the technical side of a Digital Humanities research project at the Maryland Institute for Technology in the Humanities (MITH).",
-      skills: ["JavaScript", "TypeScript"]
+      title: "Tech Fellow",
+      company: "Fischell Institute for Biomedical Devices, Nebula Fellowship Program",
+      duration: "Aug. 2026 – Dec. 2026",
+      description: "Built a rigorous evaluation pipeline for GPT-5-Nano on scientific plot understanding in dynamic systems, using tick-based spacing normalization. Selected and justified set-based similarity metrics to evaluate structural agreement between predicted and ground-truth plots to reveal hidden failure nodes in predictions.",
+      skills: ["Python", "GPT-5-Nano", "Evaluation Pipelines", "ML Research", "Data Analysis"]
     },
     {
       title: "Research Assistant",
-      company: "Dr. Hiazhao Yang",
-      duration: "Jan 2025 - Present",
-      description: "Working with Dr. Yang to benchmark different models such as DeepSeek-R1 and Qwen2.5 and then using SFT to increase accuracy.",
-      skills:['Python', "Keras, TensorFlow"]
+      company: "UM Institute of Advanced Computer Studies, UMD (Dr. Haizhao Yang)",
+      duration: "March 2025 – December 2025",
+      description: "Enhanced state-of-the-art LLM fine-tuning and benchmarking (e.g., Qwen2.5, DeepSeek-VL R1) using PEFT methods such as LoRA, leveraging LLaMA-Factory, HuggingFace Transformers, and PyTorch in multi-GPU distributed environments. Developed custom evaluation pipelines and managed virtualized training workflows on Linux servers.",
+      skills: ["Python", "PyTorch", "LoRA", "PEFT", "HuggingFace", "LLaMA-Factory", "Linux"]
+    },
+    {
+      title: "Technology Assistantship Intern",
+      company: "Maryland Institute of Technology in Humanities (Dr. Raff Viglianti)",
+      duration: "Aug. 2025 – Jan. 2026",
+      description: "Engineered an Astro-based frontend framework with CETEIcean library for efficient client-side parsing and rendering of TEI XML using vanilla JavaScript. Implemented TEI Processing Model logic for dynamic, build-time transformation and styling of TEI elements via automated XML processing workflows.",
+      skills: ["JavaScript", "Astro", "TEI XML", "CETEIcean", "Frontend Development"]
+    },
+    {
+      title: "Web Developer and Designer",
+      company: "Campus Coders Crew",
+      duration: "May 2025 – May 2026",
+      description: "Developed and deployed customer-facing websites from Figma wireframes to production, utilizing HTML, CSS, JavaScript, and React, and integrating API functionalities. Collaborated with team members to design, build, and optimize web products ensuring scalability and intuitive interface while supporting backend integrations with MySQL and Postgres.",
+      skills: ["React", "HTML/CSS", "JavaScript", "Figma", "MySQL", "Postgres"]
     },
     {
       title: "Resident Assistant",
-      company: "Residence Hall Association, University of Maryland",
-      duration: "Aug 2025 - Aug 2026",
-      description: "Provided guidance and support to 60+ residents in Oakland Hall. Organized educational and social programs to build community engagement. Handled crisis situations and conflict resolution while maintaining a safe living environment.",
-      skills: ["Leadership", "Crisis Management", "Event Planning", "Communication", "Conflict Resolution", "Community Building"]
+      company: "Department of Resident Life, UMD",
+      duration: "Aug. 2025 – Present",
+      description: "Fostered a safe, inclusive residential community by providing peer support, conflict mediation, and crisis response while upholding university policies. Led community-building initiatives and programs for 49 residents to promote engagement and academic success.",
+      skills: ["Leadership", "Crisis Management", "Conflict Resolution", "Community Building", "Communication"]
     },
     {
       title: "Academic Peer Mentor",
-      company: "Office of Undergraduate Research",
-      duration: "Aug 2024 - Dec 2024",
-      description: "Mentoring classes of 40 FIRE students by facilitating discussions, aiding team projects, addressing questions, and helping in presenting research and papers on the topics of Climate Change.",
-      skills: ["Mentoring", "Teaching", "Academic Planning", "Workshop Facilitation", "Student Development", "Leadership"]
+      company: "Office of Undergraduate Research, UMD (FIRE: Bioinspired Robotics)",
+      duration: "Aug. 2024 – Dec. 2024",
+      description: "Mentored classes of 40 FIRE students by facilitating discussions, aiding team projects, addressing questions, and helping in presenting research and papers on bioinspired robotics topics.",
+      skills: ["Mentoring", "Teaching", "Academic Planning", "Workshop Facilitation", "Leadership"]
     },
     {
       title: "Community Assistant",
-      company: "Residence Hall Association",
-      duration: "Aug 2024 - Aug 2025",
-      description: "Administered key distribution, package processing, and service desk operations, streamlining daily tasks for 706 residents. First point of contact for visitors and residents; issued core key changes and troubleshooted issues in the building.",
-      skills: ["Community Outreach", "Volunteer Management", "Administrative Support", "Database Management"]
+      company: "Department of Resident Life, UMD",
+      duration: "Aug. 2024 – Aug. 2025",
+      description: "Administered key distribution, package processing, and service desk operations for 706 residents. First point of contact for visitors and residents; issued core key changes and troubleshooted issues in halls.",
+      skills: ["Administrative Support", "Customer Service", "Database Management", "Community Outreach"]
+    },
+    {
+      title: "VP for Diversity, Equity & Inclusion",
+      company: "South Hill Area Council, University of Maryland",
+      duration: "Aug. 2023 – May 2024",
+      description: "Managed comprehensive diversity programs and initiatives within the South Hill Council, helping to foster an inclusive campus culture.",
+      skills: ["Leadership", "Diversity Programs", "Event Planning", "Community Engagement", "Communication"]
     }
   ];
 
-  const menuItems = [
-    'Research Assistantship',
-    'Research Assistant',
-    'Resident Assistant',
-    'Academic Peer Mentor',
-    'Community Assistant'
-  ];
+  const menuItems = experiences.map(e => e.title);
 
   const handleNext = () => {
     if (showExperiences) {
-      let nextIndex = currentIndex;
-      do {
-        nextIndex = (nextIndex + 1) % experiences.length;
-      } while (!experiences[nextIndex].title); 
-      setCurrentIndex(nextIndex);
-      onNavigate?.(nextIndex);
+      setCurrentIndex((currentIndex + 1) % experiences.length);
     } else {
-      const newIndex = (selectedMenu + 1) % menuItems.length;
-      setSelectedMenu(newIndex);
+      setSelectedMenu((selectedMenu + 1) % menuItems.length);
     }
   };
 
   const handlePrev = () => {
     if (showExperiences) {
-      let prevIndex = currentIndex;
-      do {
-        prevIndex = (prevIndex - 1 + experiences.length) % experiences.length;
-      } while (!experiences[prevIndex].title); 
-      setCurrentIndex(prevIndex);
-      onNavigate?.(prevIndex);
+      setCurrentIndex((currentIndex - 1 + experiences.length) % experiences.length);
     } else {
-      const newIndex = (selectedMenu - 1 + menuItems.length) % menuItems.length;
-      setSelectedMenu(newIndex);
+      setSelectedMenu((selectedMenu - 1 + menuItems.length) % menuItems.length);
     }
   };
 
@@ -104,12 +107,12 @@ const IPod = ({ onNavigate }) => {
             <span className="ipod-logo">My Experiences</span>
             <div className="battery-icon"></div>
           </div>
-          
+
           <div className="screen-content">
             {!showExperiences ? (
               <div className="menu-list">
                 {menuItems.map((item, index) => (
-                  <div 
+                  <div
                     key={index}
                     className={`menu-item ${index === selectedMenu ? 'selected' : ''}`}
                   >
@@ -139,16 +142,16 @@ const IPod = ({ onNavigate }) => {
 
         <div className="click-wheel">
           <button className="wheel-btn wheel-menu" onClick={handleMenu}>
-            <span>MENU</span>
+            <span>☰</span>
           </button>
           <button className="wheel-btn wheel-forward" onClick={handleNext}>
-            <span>▶▶</span>
+            <span>▶</span>
           </button>
           <button className="wheel-btn wheel-play" onClick={handleCenter}>
-            <span>▶❚❚</span>
+            <span>⏵</span>
           </button>
           <button className="wheel-btn wheel-back" onClick={handlePrev}>
-            <span>◀◀</span>
+            <span>◀</span>
           </button>
           <div className="center-button" onClick={handleCenter}></div>
         </div>

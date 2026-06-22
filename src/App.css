@@ -1,15 +1,34 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #F4F8D3;
+  --accent: #F7CFD8;
+  --text: #58A7A7;
+  --surface: #f0f0f0;
+  --border: #000;
+}
+
+body.dark {
+  --bg: #1a1a2e;
+  --accent: #16213e;
+  --text: #a8d8ea;
+  --surface: #252545;
+  --border: #4a4a6a;
+  color: var(--text);
+}
+
 html {
-  background-color: #F4F8D3;
+  background-color: var(--bg);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body, #root {
   width: 100%;
   min-height: 100vh;
-  background-color: #F4F8D3;
+  background-color: var(--bg);
+  transition: background-color 0.4s ease;
 }
 
 .wholePage {
@@ -18,20 +37,23 @@ body, #root {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #F4F8D3;
+  background-color: var(--bg);
   justify-content: space-between;
+  transition: background-color 0.4s ease;
 }
+
 /* Navbar Stuff */
 .navbar{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  will-change: transform, opacity;
 }
 .navbar button{
   transition-duration: 0.5s;
   transition-property: all;
-  background-color: #F7CFD8;
-  color: #F4F8D3;
+  background-color: var(--accent);
+  color: #58A7A7;
   margin-right: 50px;
   font-family: 'Jersey 10';
   box-shadow: 0.2cm 0.2cm 0.1cm 0.1cm;
@@ -39,25 +61,33 @@ body, #root {
   margin-top: 30px;
   padding: 15px 30px;
   border-radius: 20px;
-  border: #F7CFD8;
+  border: var(--accent);
 }
 .navbar button:hover{
-  background-color: #F4F8D3;
-  color: #F7CFD8;
-  border: #F7CFD8;
+  background-color: var(--bg);
+  color: #58A7A7;
+  border: var(--accent);
 }
 .navbar img{
   max-height: 125px;
   max-width: 125px;
 }
 
+.navbar .moon-img {
+  max-height: 65px;
+  max-width: 65px;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
 .myName {
   display: flex;
   flex-direction: column;
-  color: #58A7A7;
+  color: var(--text);
   font-family: 'Jersey 10';
   font-weight: 200;
   align-items: center;
+  will-change: transform, opacity;
 }
 
 .myName p {
@@ -68,11 +98,12 @@ body, #root {
 }
 
 .myName h1 {
-  font-size: 200px;
+  font-size: clamp(55px, 16vw, 190px);
   margin: -10px;
   letter-spacing: 0.5rem;
   padding: 0px;
   line-height: 80%;
+  will-change: transform, opacity;
 }
 
 .CnJ {
@@ -81,12 +112,28 @@ body, #root {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  will-change: transform, opacity;
+}
+
+.cat {
+  position: relative;
+}
+
+.cat-img {
+  max-width: 340px;
+  height: auto;
+  cursor: pointer;
+}
+
+.atext {
+  filter: invert(62%) sepia(19%) saturate(876%) hue-rotate(135deg) brightness(90%) contrast(89%);
 }
 
 .journal {
   display: flex;
   flex-direction: row;
-  margin-top: 200px;
+  margin-top: 0;
 }
 .popup{
   height: 100px;
@@ -104,30 +151,32 @@ cat{
 .hearts{
   z-index: 5;
   position: absolute;
-  top: 40%;     
-  right: 27%;
-  width: 80px;     
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
   height: 160px;
   pointer-events: none;
 }
 .clouds{
   z-index: 5;
   position: absolute;
-  top: 70%; 
+  top: 70%;
   left: 60%;
-  width: 50%;    
+  width: 50%;
   height: 50%;
   pointer-events: none;
   opacity: 70%;
   filter: blur(5px);
+  display: none !important;
 }
 .footer {
   position: relative;
   width: 100%;
   height: 60%;
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
 }
 
 .grass {
@@ -137,11 +186,10 @@ cat{
 
 .footer p {
   position: absolute;
-  color: #000; 
-  font-family: 'Jersey 10'; 
+  font-family: 'Jersey 10';
   letter-spacing: 10px;
   font-size: 30px;
-  top: 85%;  
+  top: 85%;
   z-index: 1;
   color: white;
 }
@@ -150,7 +198,7 @@ cat{
 }
 
 .experiences{
-  background: radial-gradient(farthest-side,#F7CFD8, #F4F8D3);
+  background: radial-gradient(farthest-side, var(--accent), var(--bg));
   width: 100%;
   height: 100vh;
 }
@@ -159,70 +207,134 @@ cat{
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #F4F8D3;
+  background: var(--bg);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #58A7A7;
+  background: var(--text);
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #8B4513;
   border-radius: 10px;
 }
 
-.clouds{
-  display: none !important;
-  border: 2px solid red;
+/* Professional mode overrides */
+.professional {
+  --bg: #ffffff;
+  --accent: #1e3a5f;
+  --text: #1e3a5f;
+  --surface: #f5f5f5;
+  --border: #1e3a5f;
+  font-family: 'Inter', 'Segoe UI', sans-serif !important;
 }
+
+.professional .navbar button {
+  border-radius: 6px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.05rem;
+  color: #58A7A7;
+  background-color: var(--accent);
+}
+
+.professional .myName {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.professional .myName h1 {
+  font-size: clamp(48px, 6vw, 96px);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  letter-spacing: 0.05rem;
+  line-height: 100%;
+}
+
+.professional .myName p {
+  font-size: 22px;
+  letter-spacing: 0.05rem;
+}
+
 @media (max-width: 768px) {
   html {
-    background-color: #F4F8D3;
+    background-color: var(--bg);
     min-height: 100vh;
     overflow-x: hidden;
   }
-  
+
   body, #root {
     width: 100%;
     min-height: 100vh;
-    background-color: #F4F8D3;
+    background-color: var(--bg);
     overflow-x: hidden;
   }
+
   .navbar img {
     display: none;
   }
-  .navbar{
-    width:100%;
+
+  .navbar {
+    width: 100%;
     display: flex;
-    margin-left: 25px;
     align-items: center;
     justify-content: space-evenly;
+    padding: 0 8px;
+    margin-left: 0;
   }
-  .myName h1{
-    font-size: 4rem;
+
+  .navbar button {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-right: 0;
+    margin-top: 12px;
   }
+
+  .myName h1 {
+    font-size: clamp(52px, 13vw, 80px);
+  }
+
+  .myName p {
+    font-size: 18px;
+  }
+
+  .CnJ {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    gap: 16px;
+  }
+
+  .journal {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .cat-img {
+    max-width: 220px;
+  }
+
+  .hearts {
+    width: 55px;
+    height: 110px;
+  }
+
   .footer {
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center; 
-    align-items: center;     
+    justify-content: center;
+    align-items: center;
   }
+
   .footer p {
     position: absolute;
-    color: #000; 
-    font-family: 'Jersey 10'; 
+    font-family: 'Jersey 10';
     letter-spacing: 6px;
     font-size: 20px;
-    top: 70%;  
+    top: 70%;
     z-index: 1;
     color: white;
   }
-  
 }

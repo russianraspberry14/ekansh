@@ -212,18 +212,18 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    font-size: 13px;
-    color: #666;
+    font-size: 18px;
+    color: #2d3748;
     font-weight: bold;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .wheel-btn:hover {
-    color: #333;
-    transform: scale(1.05);
+    color: #58A7A7;
+    transform: scale(1.1);
   }
   
   .wheel-btn:active {
@@ -295,37 +295,74 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      width: 100vw; /* ensure full viewport width */
-      padding: 0;    /* remove extra padding if needed */
+      height: auto;
+      min-height: 100vh;
+      width: 100vw;
+      padding: 1rem 0;
       margin: 0;
     }
-  
+
     .ipod-body.horizontal {
-      width: 90vw;        /* full screen width */
-      height: 90vh;        
+      width: 94vw;
+      height: auto;
+      min-height: 90vh;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      padding: 1rem;
+      gap: 16px;
+      padding: 0.75rem;
       box-sizing: border-box;
-      border: 5px dashed black;
+      border: 4px dashed black;
     }
-  
+
     .horizontal .ipod-screen {
       width: 100%;
-      height: 60%;          /* adjust based on layout */
+      height: auto;
+      min-height: 52vh;
+      max-height: 58vh;
     }
-  
-    .click-wheel {
-      width: 60vw;          /* larger click wheel for touch */
-      height: 40% !important;
-      margin: 1rem auto;
-      border-radius: 60%;
+
+    .ipod-logo {
+      font-size: 16px;
+      letter-spacing: 3px;
     }
-  
+
     .screen-content {
-      font-size: 1.2rem; /* scale down text for mobile */
+      font-size: 14px;
+    }
+
+    .exp-title {
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .exp-company {
+      font-size: 12px;
+    }
+
+    .exp-duration {
+      font-size: 11px;
+    }
+
+    .exp-description {
+      font-size: 12px;
+    }
+
+    .skills-title {
+      font-size: 12px;
+    }
+
+    .skills-list {
+      font-size: 12px;
+    }
+
+    .click-wheel {
+      width: 55vw;
+      height: 55vw;
+      max-width: 240px;
+      max-height: 240px;
+      margin: 0.5rem auto;
+      border-radius: 50%;
+      border: 4px solid black;
     }
   }
