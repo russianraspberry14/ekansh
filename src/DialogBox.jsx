@@ -10,33 +10,10 @@ function DialogBox() {
     const dialogRef = useRef();
     const majorRef = useRef();
     const minorRef = useRef();
-  
+
     useEffect(() => {
-        const el = dialogRef.current;
-        if (!el) return;
-      
-        // Reset state
-        gsap.set(el, { x: '-100vw', scale: 0.5, opacity: 0 });
-      
-        // Animate in with scrub = true (scroll-controlled)
-        gsap.to(el, {
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            end: "top 40%",
-            scrub: true,
-            pin: false,
-            markers: false, // set to true to debug
-          },
-          x: 0,
-          scale: 1,
-          opacity: 1,
-          ease: "elastic.out(1, 0.5)"
-        });
-      
-        // Scramble once when entering
         ScrollTrigger.create({
-          trigger: el,
+          trigger: dialogRef.current,
           start: "top 80%",
           once: true,
           onEnter: () => {
@@ -87,10 +64,10 @@ function DialogBox() {
 
       <div className="description-box">
         <p>
-        I love playing around with ML Models, with my work spanning LLM fine-tuning, benchmarking vision-language models, 
-        and developing a bio-inspired robot as part of UMD’s FIRE program. I’m driven by curiosity and a love for building things that connect .
-        I’m also a creative developer passionate about blending code with design. 
-        I build web apps with Node.js, Express, and EJS, and bring ideas to life using JavaScript, React, and Figma. 
+        I love playing around with ML Models, with my work spanning LLM fine-tuning, benchmarking vision-language models,
+        and developing a bio-inspired robot as part of UMD's FIRE program. I'm driven by curiosity and a love for building things that connect.
+        I'm also a creative developer passionate about blending code with design.
+        I build web apps with Node.js, Express, and EJS, and bring ideas to life using JavaScript, React, and Figma.
         </p>
       </div>
     </div>

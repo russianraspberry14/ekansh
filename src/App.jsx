@@ -18,6 +18,7 @@ import grass from './assets/grass.svg'
 import Journal from './journal.jsx'
 import Ipod from './Ipod.jsx'
 import Projects from './Projects.jsx'
+import ProMode from './ProMode.jsx'
 
 gsap.registerPlugin(ScrambleTextPlugin)
 gsap.registerPlugin(MorphSVGPlugin)
@@ -40,15 +41,6 @@ function App() {
     }
   }, [isDark]);
 
-  useEffect(() => {
-    const box = document.querySelector('.system-box');
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        box.classList.add('revealed');
-      }
-      });
-      observer.observe(box);
-    }, []);
 
   useEffect(() => {
     gsap.set(['.navbar', '.myName', '.CnJ'], { opacity: 0, y: 20 });
@@ -88,8 +80,12 @@ function App() {
   }, []);
 
 
+  if (isPro) {
+    return <ProMode onToggle={() => setIsPro(false)} />;
+  }
+
   return (
-    <div ref={containerRef} className={`wholePage${isPro ? ' professional' : ''}`}>
+    <div ref={containerRef} className="wholePage">
       <nav className='navbar'>
         <img
           src={isDark ? moon : sun}
@@ -99,7 +95,7 @@ function App() {
           style={{ cursor: 'pointer' }}
         />
         <div>
-          <button onClick={() => setIsPro(p => !p)}>{isPro ? 'cozy mode' : 'pro mode'}</button>
+          <button onClick={() => setIsPro(p => !p)}>pro mode</button>
           <button onClick={() => window.open('/EntireResume.pdf', '_blank')}>résumé</button>
           <button onClick={() => setShowContact(true)}>contact me</button>
         </div>
@@ -112,34 +108,32 @@ function App() {
       </div>
       {showContact && <Contact onClose={() => setShowContact(false)} containerRef={containerRef}/>}
       {showJournal && <Journal onClose={() => setShowJournal(false)} />}
-      {!isPro && (
-        <div className="CnJ">
-          <div className="journal">
-            <div>
-              <img src={journal} alt="an image of the journal" onClick={() => setShowJournal(true)}/>
-            </div>
-            <div className="popup">
-              <img className="atext" src={atext} alt="an image of the text"/>
-              <img className="arrow" src={arrow} alt="an image of the arrow"/>
-            </div>
+      <div className="CnJ">
+        <div className="journal">
+          <div>
+            <img src={journal} alt="an image of the journal" onClick={() => setShowJournal(true)}/>
           </div>
-          <div className="cat">
-            <img src={showEcat ? ecat : scat} onClick={handleClick} alt="cat" className="cat-img"></img>
-            {showHearts && (
-              <img
-                src={`${hearts}?${new Date().getTime()}`}
-                className="hearts"
-                alt="hearts"
-              />
-            )}
-            <img src={clouds} className="clouds" alt="clouds"></img>
+          <div className="popup">
+            <img className="atext" src={atext} alt="an image of the text"/>
+            <img className="arrow" src={arrow} alt="an image of the arrow"/>
           </div>
         </div>
-      )}
-      <DialogBox isPro={isPro} />
-      <Ipod isPro={isPro} />
+        <div className="cat">
+          <img src={showEcat ? ecat : scat} onClick={handleClick} alt="cat" className="cat-img"></img>
+          {showHearts && (
+            <img
+              src={`${hearts}?${new Date().getTime()}`}
+              className="hearts"
+              alt="hearts"
+            />
+          )}
+          <img src={clouds} className="clouds" alt="clouds"></img>
+        </div>
+      </div>
+      <DialogBox />
+      <Ipod />
 
-      <Projects isPro={isPro} />
+      <Projects />
 
       <div className='footer'>
         <img src={grass} width='100%' className='grass'/>
