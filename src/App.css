@@ -278,24 +278,26 @@ cat{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 0 8px;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 12px;
     margin-left: 0;
+    flex-wrap: wrap;
   }
 
   .navbar button {
-    font-size: 14px;
-    padding: 8px 12px;
+    font-size: 17px;
+    padding: 11px 18px;
     margin-right: 0;
-    margin-top: 12px;
+    margin-top: 14px;
   }
 
   .myName h1 {
-    font-size: clamp(52px, 13vw, 80px);
+    font-size: 19vw;
   }
 
   .myName p {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .CnJ {
@@ -308,6 +310,15 @@ cat{
   .journal {
     justify-content: center;
     margin-top: 0;
+  }
+
+  .journal > div:first-child img {
+    max-width: 70px;
+    height: auto;
+  }
+
+  .popup {
+    display: none;
   }
 
   .cat-img {
