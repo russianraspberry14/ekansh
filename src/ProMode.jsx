@@ -102,26 +102,22 @@ function ProMode({ onToggle }) {
     e.preventDefault();
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.scrollY - 68;
+    const top = el.getBoundingClientRect().top + window.scrollY - 88;
     window.scrollTo({ top, behavior: 'smooth' });
   };
 
   return (
     <div className="pro-page">
-      <header className="pro-header">
-        <div className="pro-header-inner">
-          <span className="pro-name-logo">ES</span>
-          <nav className="pro-nav">
-            <a href="#about" onClick={scrollTo('about')}>About</a>
-            <a href="#experience" onClick={scrollTo('experience')}>Experience</a>
-            <a href="#projects" onClick={scrollTo('projects')}>Projects</a>
-            <a href="#contact" onClick={scrollTo('contact')}>Contact</a>
-          </nav>
-          <div className="pro-header-actions">
-            <button className="pro-toggle-btn" onClick={onToggle}>cozy mode</button>
-          </div>
-        </div>
-      </header>
+      <nav className="nav-pill" aria-label="Primary">
+        <span className="wordmark">ES</span>
+        <ul className="nav-pill__links">
+          <li><a href="#about" onClick={scrollTo('about')}>About</a></li>
+          <li><a href="#experience" onClick={scrollTo('experience')}>Experience</a></li>
+          <li><a href="#projects" onClick={scrollTo('projects')}>Projects</a></li>
+          <li><a href="#contact" onClick={scrollTo('contact')}>Contact</a></li>
+        </ul>
+        <button className="nav-pill__cta" onClick={onToggle}>Cozy mode</button>
+      </nav>
 
       <main className="pro-main">
         <section id="about" className="pro-about">
@@ -147,46 +143,44 @@ function ProMode({ onToggle }) {
         </section>
 
         <section id="experience" className="pro-section">
-          <h2 className="pro-section-heading">Research &amp; Experience</h2>
-          <div className="pro-timeline">
+          <h2 className="pro-section-heading">Research &amp; experience</h2>
+          <dl className="entry-list">
             {experiences.map((exp, i) => (
-              <div key={i} className="pro-entry">
-                <div className="pro-entry-header">
-                  <span className="pro-entry-title">{exp.title}</span>
-                  <span className="pro-entry-date">{exp.duration}</span>
-                </div>
-                <p className="pro-entry-org">{exp.org}</p>
-                <p className="pro-entry-desc">{exp.description}</p>
-                <div className="pro-tags">
-                  {exp.skills.map((s, j) => <span key={j} className="pro-tag">{s}</span>)}
-                </div>
+              <div key={i} className="entry">
+                <dt className="entry__term">
+                  <span className="entry__role">{exp.title}</span>
+                  <span className="entry__date">{exp.duration}</span>
+                </dt>
+                <dd className="entry__org">{exp.org}</dd>
+                <dd className="entry__desc">{exp.description}</dd>
+                <dd className="entry__stack">{exp.skills.join(' · ')}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </section>
 
         <section id="projects" className="pro-section">
           <h2 className="pro-section-heading">Projects</h2>
-          {projects.map((proj, i) => (
-            <div key={i} className="pro-entry">
-              <div className="pro-entry-header">
-                <span className="pro-entry-title">{proj.title}</span>
-                {proj.link && (
-                  <a
-                    href={proj.link}
-                    target={proj.link.startsWith('/') ? '_self' : '_blank'}
-                    rel="noopener noreferrer"
-                    className="pro-entry-link"
-                  >↗</a>
-                )}
+          <dl className="entry-list">
+            {projects.map((proj, i) => (
+              <div key={i} className="entry">
+                <dt className="entry__term">
+                  <span className="entry__role">{proj.title}</span>
+                  {proj.link && (
+                    <a
+                      href={proj.link}
+                      target={proj.link.startsWith('/') ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className="entry__link"
+                    >View →</a>
+                  )}
+                </dt>
+                <dd className="entry__org">{proj.subtitle}</dd>
+                <dd className="entry__desc">{proj.description}</dd>
+                <dd className="entry__stack">{proj.tech.join(' · ')}</dd>
               </div>
-              <p className="pro-entry-subtitle">{proj.subtitle}</p>
-              <p className="pro-entry-desc">{proj.description}</p>
-              <div className="pro-tags">
-                {proj.tech.map((t, j) => <span key={j} className="pro-tag">{t}</span>)}
-              </div>
-            </div>
-          ))}
+            ))}
+          </dl>
         </section>
 
         <section id="contact" className="pro-section pro-contact-section">
@@ -202,8 +196,11 @@ function ProMode({ onToggle }) {
             <a href="https://www.linkedin.com/in/ekansh-sahu" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="/EntireResume.pdf" target="_blank" rel="noopener noreferrer">CV</a>
           </div>
-          <p className="pro-footer-text">© Ekansh Sahu 2025</p>
         </section>
+
+        <footer className="pro-footer">
+          <p className="pro-footer-text">© Ekansh Sahu 2025</p>
+        </footer>
       </main>
     </div>
   );
