@@ -39,6 +39,28 @@ const Projects = () => {
       link: "/bird.pdf" 
     },
     {
+      id: 5,
+      title: "Assist²",
+      subtitle: "RAG-based Q&A System",
+      type: "Machine Learning",
+      tech: ["Python", "LangChain", "MongoDB Atlas", "Gemini 2.5"],
+      description: "A hybrid retrieval pipeline combining dense embeddings with BM25 keyword search, then re-ranked with a cross-encoder for joint query-document relevance before passing top results to the LLM for grounded generation. Fixed a semantic mismatch between user queries and formal policy language using LLM-driven query expansion, improving retrieval coverage across a 133-chunk corpus. Evaluated with a RAGAS suite and engineered hallucination controls.",
+      status: "COMPLETED",
+      image: "🔍",
+      link: "https://github.com/russianraspberry14/resassist"
+    },
+    {
+      id: 6,
+      title: "Knowtion",
+      subtitle: "Health Tracker Web App",
+      type: "Machine Learning",
+      tech: ["Flask", "React", "Librosa", "XGBoost"],
+      description: "Real-time mental health app that analyzes audio and physiological signals to detect stress and emotional shifts using datasets like RAVDESS and WESAD. Full-stack pipeline integrating ML inference to help individuals monitor mood patterns.",
+      status: "COMPLETED",
+      image: "🧠",
+      link: "https://github.com/russianraspberry14/emoticon"
+    },
+    {
       id: 4,
       title: "Brewery Finder",
       subtitle: "API USAGE",

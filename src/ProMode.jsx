@@ -63,6 +63,20 @@ const experiences = [
 
 const projects = [
   {
+    title: "Assist²",
+    subtitle: "RAG-based Q&A System",
+    description: "Hybrid retrieval pipeline combining dense embeddings with BM25 keyword search, re-ranked with a cross-encoder for joint query-document relevance before grounded generation. Fixed a semantic mismatch between user queries and formal policy language using LLM-driven query expansion, improving retrieval coverage across a 133-chunk corpus. Evaluated with a RAGAS suite and engineered hallucination controls.",
+    tech: ["Python", "LangChain", "MongoDB Atlas", "Gemini 2.5"],
+    link: "https://github.com/russianraspberry14/resassist"
+  },
+  {
+    title: "Knowtion",
+    subtitle: "Health Tracker Web App",
+    description: "Real-time mental health app that analyzes audio and physiological signals to detect stress and emotional shifts using datasets like RAVDESS and WESAD. Full-stack pipeline integrating ML inference to help individuals monitor mood patterns.",
+    tech: ["Flask", "React", "Librosa", "XGBoost"],
+    link: "https://github.com/russianraspberry14/emoticon"
+  },
+  {
     title: "TrotMate",
     subtitle: "Road trip planner with dynamic segmentation and hotel/restaurant suggestions",
     description: "Allows users to enter start and end locations, automatically splits trips into daily driving segments, suggests hotels and restaurants via Google Places API, and exports plans as shareable Google Maps links or .kml files.",
