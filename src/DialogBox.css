@@ -68,11 +68,10 @@
   border: 2px solid #000;
   padding: 1rem;
   margin: 1rem;
-  font-size: 9px;
   line-height: 1.6;
   color: #111;
   box-shadow: inset -3px -3px 0 #fff, inset 3px 3px 0 #444;
-  font-size: 20px;
+  font-size: px;
   text-align: center;
 }
 
@@ -194,7 +193,7 @@ body.dark .skills-title {
   }
 
   .description-box {
-    font-size: 17px;
+    font-size: 19px;
     padding: 0.75rem;
     margin: 0.5rem;
     line-height: 1.7;

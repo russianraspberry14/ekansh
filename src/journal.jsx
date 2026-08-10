@@ -1,12 +1,14 @@
 import './journal.css'
 import { useEffect, useState } from 'react'
+import { motion, useDragControls } from 'framer-motion'
 import { supabase } from './supabaseClient'
 
-function Journal({onClose}) {
+function Journal({onClose, containerRef}) {
     const [entries, setEntries] = useState([])
     const [name, setName] = useState('')
     const [words, setWords] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const dragControls = useDragControls()
 
     useEffect(() => {
         async function fetchEntries() {
@@ -63,9 +65,25 @@ function Journal({onClose}) {
     }
 
     return(
-        <div className="journal-box">
-            <div className='header'>
-                <button className="close-journal" onClick={onClose}>[X]</button>
+        <motion.div
+            className="journal-box"
+            drag
+            dragListener={false}
+            dragControls={dragControls}
+            dragConstraints={containerRef}
+            dragElastic={0.15}
+            dragMomentum={false}
+            dragTransition={{ power: 0.2, timeConstant: 200 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: 'spring', stiffness: 90, damping: 16 }}
+        >
+            <div className='header' onPointerDown={(e) => dragControls.start(e)}>
+                <button
+                    className="close-journal"
+                    onClick={onClose}
+                    onPointerDown={(e) => e.stopPropagation()}
+                >[X]</button>
                 <h2>GuestBook!</h2>
             </div>
             
@@ -116,7 +134,7 @@ function Journal({onClose}) {
                     ))
                 )}
             </div>
-        </div>
+        </motion.div>
     );
 }
 

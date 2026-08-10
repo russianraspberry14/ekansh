@@ -1,22 +1,31 @@
-/* Hallmark · tokens for ProMode · theme: Terminal (atmospheric) */
+/* Tokens for ProMode — light, editorial-with-signal theme */
 
 :root {
-  /* Colour — cool near-black paper, single cyan-phosphor accent */
-  --color-paper:      oklch(14% 0.012 220);
-  --color-paper-2:    oklch(17% 0.014 220);
-  --color-paper-3:    oklch(20% 0.014 220);
-  --color-rule:       oklch(27% 0.014 220);
-  --color-neutral:    oklch(58% 0.012 220);
-  --color-muted:      oklch(46% 0.012 220);
-  --color-ink:        oklch(94% 0.008 210);
-  --color-ink-2:      oklch(80% 0.010 210);
-  --color-accent:     oklch(78% 0.14 175);
-  --color-accent-ink: oklch(12% 0.02 175);
-  --color-focus:      oklch(80% 0.15 175);
+  /* Colour — warm-white paper, dark ink, rainbow spectrum for motion + accents */
+  --color-paper:      oklch(98.5% 0.004 90);
+  --color-paper-2:    oklch(100% 0 0);
+  --color-paper-3:    oklch(95.5% 0.006 90);
+  --color-rule:       oklch(90% 0.006 90);
+  --color-neutral:    oklch(46% 0.014 260);
+  --color-muted:      oklch(58% 0.012 260);
+  --color-ink:        oklch(18% 0.012 260);
+  --color-ink-2:      oklch(33% 0.014 260);
+  --color-accent:     oklch(50% 0.19 275);
+  --color-accent-ink: oklch(98% 0.01 275);
+  --color-focus:      oklch(50% 0.19 275);
+
+  /* Rainbow spectrum — six hues walked by the aurora, the ring, and the project cards */
+  --hue-1: 350; /* rose */
+  --hue-2: 28;  /* amber */
+  --hue-3: 95;  /* lime */
+  --hue-4: 160; /* teal */
+  --hue-5: 215; /* blue */
+  --hue-6: 280; /* violet */
 
   /* Type */
-  --font-display: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Fraunces", "IBM Plex Sans", ui-serif, serif;
   --font-body:    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
 
   --text-xs:      0.75rem;
   --text-sm:      0.8125rem;
@@ -47,9 +56,15 @@
   --dur-short:   200ms;
   --dur-long:    300ms;
 
+  /* Depth */
+  --shadow-card:       0 10px 28px -16px oklch(22% 0.03 260 / 0.22), 0 2px 6px -3px oklch(22% 0.03 260 / 0.1);
+  --shadow-card-hover: 0 20px 42px -18px oklch(22% 0.03 260 / 0.28), 0 4px 10px -4px oklch(22% 0.03 260 / 0.14);
+
   /* Misc */
-  --radius-chip:  6px;
-  --radius-pill:  999px;
-  --rule-hair:    1px;
-  --z-sticky:     200;
+  --radius-chip:   6px;
+  --radius-pill:   999px;
+  --radius-card:   14px;
+  --radius-card-lg: 20px;
+  --rule-hair:     1px;
+  --z-sticky:      200;
 }

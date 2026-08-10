@@ -56,7 +56,7 @@ function DialogBox() {
       <div className="profile-row">
         <img src={me} alt="Profile" className="profile-img" />
         <div className="profile-info">
-          <p>Hi! I am Ekansh, an undergraduate sophomore at the University of Maryland, College Park.</p>
+          <p>Hi! I am Ekansh, an undergraduate senior at the University of Maryland, College Park.</p>
           <p className="gray">Major: <span className="effects" ref={majorRef}></span></p>
           <p className="gray">Minor: <span className="effects" ref={minorRef}></span></p>
         </div>

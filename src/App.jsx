@@ -67,6 +67,7 @@ function App() {
 
   const scrambleRef = useRef()
   useEffect(() => {
+    if (isPro || !scrambleRef.current) return;
     gsap.to(scrambleRef.current, {
       duration: 1,
       delay: 0.35,
@@ -77,7 +78,7 @@ function App() {
       },
       ease: "none"
     });
-  }, []);
+  }, [isPro]);
 
 
   if (isPro) {
@@ -107,7 +108,7 @@ function App() {
         <p>Digital Home!</p>
       </div>
       {showContact && <Contact onClose={() => setShowContact(false)} containerRef={containerRef}/>}
-      {showJournal && <Journal onClose={() => setShowJournal(false)} />}
+      {showJournal && <Journal onClose={() => setShowJournal(false)} containerRef={containerRef} />}
       <div className="CnJ">
         <div className="journal">
           <div>

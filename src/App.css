@@ -86,6 +86,7 @@ body, #root {
   font-family: 'Jersey 10';
   font-weight: 200;
   align-items: center;
+  margin-top: 80px;
   will-change: transform, opacity;
 }
 
@@ -120,7 +121,7 @@ body, #root {
 }
 
 .cat-img {
-  max-width: 340px;
+  max-width: 510px;
   height: auto;
   cursor: pointer;
 }
@@ -257,6 +258,10 @@ cat{
     margin-top: 14px;
   }
 
+  .myName {
+    margin-top: 40px;
+  }
+
   .myName h1 {
     font-size: 19vw;
   }
@@ -288,7 +293,7 @@ cat{
   }
 
   .cat-img {
-    max-width: 220px;
+    max-width: 330px;
   }
 
   .hearts {
